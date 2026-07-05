@@ -20,17 +20,21 @@ Tumhara Arya Sir ❤️`;
 let index = 0;
 const speed = 40;
 
+const typewriter = document.getElementById("typewriter");
+const nextBtn = document.getElementById("nextBtn");
+
 function typeWriter() {
     if (index < text.length) {
-        document.getElementById("typewriter").innerHTML += text.charAt(index);
+        typewriter.innerHTML += text.charAt(index);
         index++;
         setTimeout(typeWriter, speed);
     }
 }
 
-window.onload = typeWriter;
+window.onload = function () {
+    typeWriter();
+};
 
-// Next button
-document.getElementById("nextBtn").addEventListener("click", function () {
-    window.location.href = "gallery.html";
+nextBtn.addEventListener("click", function () {
+    window.location.href = "memories.html";
 });
