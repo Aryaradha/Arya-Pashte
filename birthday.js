@@ -60,7 +60,7 @@ document.getElementById("journeyBtn").addEventListener("click",()=>{
     document.body.style.opacity="0";
 
     setTimeout(()=>{
-        window.location.href="memories.html";
+        window.location.href="letter.html";
     },1000);
 
 });
