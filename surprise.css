@@ -1,0 +1,79 @@
+body{
+    margin:0;
+    padding:20px;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ff9ecf,#8e44ad);
+    font-family:'Poppins',sans-serif;
+    color:#fff;
+    text-align:center;
+}
+
+.container{
+    max-width:700px;
+    width:90%;
+}
+
+h1{
+    font-size:48px;
+    margin-bottom:10px;
+}
+
+h2{
+    font-size:24px;
+    font-weight:400;
+    margin-bottom:25px;
+}
+
+.cake{
+    font-size:90px;
+    animation:bounce 1.2s infinite;
+    margin-bottom:20px;
+}
+
+.message{
+    font-size:22px;
+    line-height:1.8;
+}
+
+button{
+    margin-top:30px;
+    padding:15px 35px;
+    font-size:20px;
+    border:none;
+    border-radius:40px;
+    background:#fff;
+    color:#ff1493;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.08);
+}
+
+@keyframes bounce{
+    50%{
+        transform:translateY(-15px);
+    }
+}
+
+@media(max-width:768px){
+    h1{
+        font-size:36px;
+    }
+
+    h2{
+        font-size:20px;
+    }
+
+    .cake{
+        font-size:70px;
+    }
+
+    .message{
+        font-size:18px;
+    }
+}

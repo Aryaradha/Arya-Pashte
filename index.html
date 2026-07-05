@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Birthday Surprise - Loading</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#0D0D0D;
+    overflow:hidden;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:'Poppins',sans-serif;
+    transition:opacity 1s ease;
+}
+
+.container{
+    position:relative;
+    text-align:center;
+    z-index:10;
+}
+
+.stars{
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+}
+
+.star{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:white;
+    border-radius:50%;
+    animation:twinkle 3s infinite;
+}
+
+@keyframes twinkle{
+    0%,100%{
+        opacity:.2;
+        transform:scale(.5);
+    }
+    50%{
+        opacity:1;
+        transform:scale(1.5);
+    }
+}
+
+.heart{
+    font-size:70px;
+    color:#ff4f87;
+    animation:heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat{
+    0%,100%{transform:scale(1);}
+    25%{transform:scale(1.2);}
+    50%{transform:scale(1);}
+    75%{transform:scale(1.2);}
+}
+
+.text{
+    margin-top:25px;
+    color:white;
+    font-size:24px;
+    font-family:'Cinzel',serif;
+}
+
+.footer{
+    position:absolute;
+    bottom:20px;
+    width:100%;
+    text-align:center;
+    color:#888;
+}
+
+.fadeOut{
+    opacity:0;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="stars" id="stars"></div>
+
+<div class="container">
+
+<div class="heart">❤️</div>
+
+<div class="text" id="loadingText">
+A Gift Made Just for You...
+</div>
+
+</div>
+
+<div class="footer">
+Made especially for you ❤️
+</div>
+
+<script>
+
+const stars=document.getElementById("stars");
+
+for(let i=0;i<120;i++){
+
+let star=document.createElement("div");
+
+star.className="star";
+
+star.style.left=Math.random()*100+"%";
+star.style.top=Math.random()*100+"%";
+star.style.animationDelay=Math.random()*3+"s";
+
+stars.appendChild(star);
+
+}
+
+const text=document.getElementById("loadingText");
+
+setTimeout(()=>{
+text.innerHTML="Every moment has led to this...";
+},1700);
+
+setTimeout(()=>{
+text.innerHTML="Are you ready? ❤️";
+},3400);
+
+setTimeout(()=>{
+
+document.body.classList.add("fadeOut");
+
+setTimeout(()=>{
+window.location.href="password.html";
+},1000);
+
+},5000);
+
+</script>
+
+</body>
+</html>
